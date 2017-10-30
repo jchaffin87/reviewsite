@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>John's Restaurant Review Site</title>
+<link href="reviewsite-styles.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Merriweather"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
+	rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<h1>John's Restaurant Review Site</h1>
+	</header>
+
+	<div th:each="review : ${reviews}">
+		<h2>
+			<a th:href="@{/review{id=$review.getId()})})"
+				th:text="${review.getTitle()}"></a>
+		</h2>
+	</div>
+
+</body>
+
+</html>
