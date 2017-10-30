@@ -4,13 +4,14 @@
 
 <head>
 <title>John's Restaurant Review Site</title>
-<link href="reviewsite-styles.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="normalize.css"/>
+<link rel="stylesheet" type="text/css" href="reviewsite-styles.css" />
 <link href="https://fonts.googleapis.com/css?family=Merriweather"
-	rel="stylesheet">
+	rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Raleway"
-	rel="stylesheet">
+	rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
-	rel="stylesheet">
+	rel="stylesheet"/>
 </head>
 
 <body>
@@ -18,10 +19,9 @@
 		<h1>John's Restaurant Review Site</h1>
 	</header>
 
-	<div th:each="review : ${reviews}">
+	<div th:each="review: ${reviews}">
 		<h2>
-			<a th:href="@{/review{id=$review.getId()})})"
-				th:text="${review.getTitle()}"></a>
+			<a th:href="@{/review(id=${review.id})}" th:text="${review.title}"></a>
 		</h2>
 	</div>
 
